@@ -2,7 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UserDao">
 
-	<select id="selectUsersList" parameterType="hashmap" resultType="hashmap">
+	<resultMap type="kr.co.km.vo.UserVo" id="userVo">
+		<result property="userSeq" column="user_seq" />
+		<result property="name" column="name" />
+		<result property="insertDt" column="insert_dt" />
+	</resultMap>
+
+	<select id="selectUsersList" parameterType="hashmap" resultType="hashmap" resultMap="userVo">
 		SELECT *
 		FROM users
 	</select>

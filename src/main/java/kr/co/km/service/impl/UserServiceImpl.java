@@ -1,13 +1,13 @@
 package kr.co.km.service.impl;
 
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.km.dao.UserDao;
 import kr.co.km.service.UserService;
+import kr.co.km.vo.UserVo;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -16,8 +16,7 @@ public class UserServiceImpl implements UserService{
 	UserDao userDao;
 
 	@Override
-	public List<Map<String, Object>> selectUserList() throws Exception {
-		// TODO Auto-generated method stub
+	public List<UserVo> selectUserList() throws Exception {
 		return userDao.selectUserList();
 	}
 }
