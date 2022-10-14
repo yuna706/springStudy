@@ -1,3 +1,25 @@
+$(() => {
+    getList(createList);
+});
+
+const createList = (result) => {
+    $("tbody tr").html("");
+
+    let box;
+    result.forEach(item => {
+        box = `<td>
+                <p>${item.content}</p>
+                <div>
+                    <div class="${item.enNm}">${item.krNm}</div>
+                    <div>${item.insertDt}</div>
+                </div>
+            </td>`;
+
+        $(`tbody [data-kind=${item.enNm}]`).append(box);
+        $(`tbody [data-kind=${item.enNm}] td:last-child`).data(item);
+    });
+}
+
 const getList = (callbackFN) => {
     //체크된 input list
     const kind = $("input[name=searchKind]:checked");
