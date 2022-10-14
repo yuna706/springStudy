@@ -38,8 +38,8 @@ public class UserController {
             ra.addFlashAttribute("errMsg", "등록된 사용자가 없습니다.");
             return "redirect:/login";
         } else {
-            // 세션이 없다면 null로 반환
-            HttpSession session = request.getSession(false);
+            // 세션 받아오기
+            HttpSession session = request.getSession();
             // 세션에 사용자 아이디 저장
             session.setAttribute("name", name);
             return "redirect:/todoList";
