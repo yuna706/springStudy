@@ -8,4 +8,5 @@ import kr.co.km.vo.UserVo;
 public interface UserService {
 
 	public List<UserVo> selectUserList() throws Exception;
+	public UserVo selectUser(String name) throws Exception;
 }

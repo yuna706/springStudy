@@ -1,6 +1,8 @@
 package kr.co.km.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,11 @@ public class UserDao {
 	SqlSessionTemplate sqlSession;
 	
 	public List<UserVo> selectUserList() throws Exception {
-		return sqlSession.selectList("UserDao.selectUsersList");
+		return sqlSession.selectList("UserDao.selectUserList");
+	}
+	public UserVo selectUser(String name) throws Exception {
+		Map<String, String> paramMap = new HashMap<String, String>();
+		paramMap.put("name", name);
+		return sqlSession.selectOne("UserDao.selectUser", paramMap);
 	}
 }

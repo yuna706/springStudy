@@ -8,9 +8,15 @@
 		<result property="insertDt" column="insert_dt" />
 	</resultMap>
 
-	<select id="selectUsersList" parameterType="hashmap" resultType="hashmap" resultMap="userVo">
+	<select id="selectUserList" parameterType="hashmap" resultType="hashmap" resultMap="userVo">
 		SELECT *
 		FROM users
+	</select>
+
+	<select id="selectUser" parameterType="hashmap" resultType="hashmap" resultMap="userVo">
+		SELECT *
+		FROM users
+		WHERE name = '${name}'
 	</select>
 	
 </mapper>
