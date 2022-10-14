@@ -10,7 +10,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(HttpSession session) {
-        if (session == null) {
+        if (session.getAttribute("name") == null) {
             return "redirect:/login";
         } else {
             return "redirect:/todoList";
