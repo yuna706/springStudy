@@ -40,8 +40,9 @@ public class UserController {
         } else {
             // 세션 받아오기
             HttpSession session = request.getSession();
-            // 세션에 사용자 아이디 저장
-            session.setAttribute("name", name);
+            // 세션에 사용자 정보 저장
+            session.setAttribute("name", user.getName());
+            session.setAttribute("userSeq", user.getUserSeq());
             return "redirect:/todoList";
         }
     }
