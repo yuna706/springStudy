@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 public class BoardVo {
-    int board_seq;
+    int boardSeq;
     String content;
     int kindSeq;
     int userSeq;
