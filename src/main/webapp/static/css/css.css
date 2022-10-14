@@ -71,18 +71,30 @@ tbody tr td > div {
     justify-content: space-between;
     font-size: 0.9rem;
     color: #555;
+    align-items: center;
 }
 
+tbody tr td > div > div:first-child {
+    padding: 5px 10px;
+    border-radius: 1rem;
+}
+
+tbody tr td > div > div.before {background: #ccc;}
+tbody tr td > div > div.doing {background: #61b8da;}
+tbody tr td > div > div.end {background: #6eb97d;}
+
+
 /* popup */
-.background-black{
+.background-black {
     display: none;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
     left: 0;
 }
+
 .popup {
     display: none;
     width: 30rem;
@@ -96,19 +108,23 @@ tbody tr td > div {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.popup span{
+
+.popup span {
     float: right;
     cursor: pointer;
 }
-.popup textarea{
+
+.popup textarea {
     width: 100%;
-    height: calc(100% - 2rem);
+    height: calc(100% - 3rem);
     border: none;
     resize: none;
 }
-.popup div{
+
+.popup div {
     display: flex;
     justify-content: space-between;
     font-size: 0.9rem;
     color: #555;
+    gap: 0.2rem;
 }
