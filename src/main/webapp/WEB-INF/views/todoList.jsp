@@ -26,35 +26,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr data-kind="before">
-                    <td>
-                        <p>퍼블리싱 하기</p>
-                        <div>
-                            <div class="before">시작 전</div>
-                            <div>22.10.15</div>
-                        </div>
-                    </td>
-                    <td>
-                        <p>퍼블리싱 하기</p>
-                        <div>
-                            <div class="before">시작 전</div>
-                            <div>22.10.15</div>
-                        </div>
-                    </td>
-                    <td>
-                        <p>퍼블리싱 하기</p>
-                        <div>
-                            <div class="before">시작 전</div>
-                            <div>22.10.15</div>
-                        </div>
-                    </td>
-                </tr>
+                <tr data-kind="before"></tr>
                 <tr data-kind="doing"></tr>
                 <tr data-kind="end"></tr>
             </tbody>
         </table>
         <div class="background-black"></div>
         <div class="popup">
+            <span id="deleteBtn">삭제</span>
             <span id="closeBtn">X</span>
             <textarea id="content" placeholder="할 일을 적어주세요"></textarea>
             <div>

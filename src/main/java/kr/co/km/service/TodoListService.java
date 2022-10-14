@@ -9,4 +9,5 @@ public interface TodoListService {
     TodoListDto select(TodoListDto todoListDto) throws Exception;
     int insert(TodoListDto todoListDto) throws Exception;
     int update(TodoListDto todoListDto) throws Exception;
+    int delete(TodoListDto todoListDto) throws Exception;
 }

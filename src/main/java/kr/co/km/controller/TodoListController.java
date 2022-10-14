@@ -50,4 +50,10 @@ public class TodoListController {
         todoListDto.setBoardSeq(boardSeq);
         return todoListService.update(todoListDto);
     }
+
+    @DeleteMapping("/{boardSeq}")
+    public @ResponseBody int delTodoLList(TodoListDto todoListDto, @PathVariable int boardSeq) throws Exception {
+        todoListDto.setBoardSeq(boardSeq);
+        return todoListService.delete(todoListDto);
+    }
 }

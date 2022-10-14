@@ -33,4 +33,9 @@ public class TodoListServiceImpl implements TodoListService {
 	public int update(TodoListDto todoListDto) throws Exception {
 		return todoListDao.update(todoListDto);
 	}
+
+	@Override
+	public int delete(TodoListDto todoListDto) throws Exception {
+		return todoListDao.delete(todoListDto);
+	}
 }

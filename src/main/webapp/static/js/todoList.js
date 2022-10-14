@@ -1,6 +1,6 @@
 const getList = (callbackFN) => {
     //체크된 input list
-    const kind = $("input[name=searchKind]");
+    const kind = $("input[name=searchKind]:checked");
     let kindSeqList = new Array();
     kind.each(item => {
         kindSeqList.push(item);
@@ -73,6 +73,20 @@ const mod = (boardSeq, callbackFN) => {
         url: "/todoList/${boardSeq}",
         type: "PATCH",
         data: JSON.stringify(param),
+        contentType: "application/json; charset=utf-8",
+    }).done((result) => {
+        // callback function
+        callbackFN(result);
+    }).fail((result) => {
+        alert(result);
+    });
+}
+
+
+const del = (seq, callbackFN) => {
+    $.ajax({
+        url: `/todoList/${seq}`,
+        type: "DELETE",
         contentType: "application/json; charset=utf-8",
     }).done((result) => {
         // callback function

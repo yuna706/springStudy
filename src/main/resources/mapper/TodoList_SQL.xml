@@ -27,6 +27,7 @@
 			    ${kindSeq}
 			</foreach>
 		</if>
+		ORDER BY b.kind_seq, b.insert_dt
 	</select>
 
 	<select id="select" parameterType="hashmap" resultType="hashmap" resultMap="todoListDto">
@@ -50,5 +51,9 @@
 		SET content = '${content}', kind_seq = ${kindSeq}
 		WHERE board_seq = ${boardSeq};
 	</update>
-	
+
+	<delete id="delete" parameterType="hashmap">
+		delete from board
+		where board_seq = ${boardSeq}
+	</delete>
 </mapper>

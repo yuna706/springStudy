@@ -27,4 +27,8 @@ public class TodoListDao {
     public int update(TodoListDto todoListDto) throws Exception {
         return sqlSession.update("TodoListDao.update", todoListDto);
     }
+
+    public int delete(TodoListDto todoListDto) throws Exception {
+        return sqlSession.delete("TodoListDao.delete", todoListDto);
+    }
 }
