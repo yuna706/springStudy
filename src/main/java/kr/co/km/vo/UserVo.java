@@ -1,7 +1,9 @@
 package kr.co.km.vo;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +12,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserVo {
-	int userSeq;
-	String name;
-	Timestamp insertDt;
+	private int userSeq;
+	private String name;
+	@JsonFormat(pattern="yyyy.MM.dd")
+	private Date insertDt;
 }

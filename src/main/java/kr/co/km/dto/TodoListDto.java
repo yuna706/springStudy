@@ -1,27 +1,29 @@
 package kr.co.km.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 import java.util.List;
 
 @Data
 @Getter
 @Setter
 public class TodoListDto {
-    int boardSeq;
-    String content;
-    Timestamp insertDt;
+    private int boardSeq;
+    private String content;
+    @JsonFormat(pattern="yyyy.MM.dd")
+    private Date insertDt;
 
     // 검색 파라미터용
-    List<Integer> kindSeqList;
+    private List<Integer> kindSeqList;
 
-    int kindSeq;
-    String krNm;
-    String enNm;
+    private int kindSeq;
+    private String krNm;
+    private String enNm;
 
-    int userSeq;
-    String name;
+    private int userSeq;
+    private String name;
 }

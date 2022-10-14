@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BoardKindVo {
-    int kindSeq;
-    String krNm;
-    String enNm;
+    private int kindSeq;
+    private String krNm;
+    private String enNm;
 }
