@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 @Data
 @Getter
@@ -13,6 +14,9 @@ public class TodoListDto {
     int boardSeq;
     String content;
     Timestamp insertDt;
+
+    // 검색 파라미터용
+    List<Integer> kindSeqList;
 
     int kindSeq;
     String krNm;

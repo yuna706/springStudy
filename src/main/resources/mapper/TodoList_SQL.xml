@@ -21,8 +21,11 @@
 		INNER JOIN board_kind bk on b.kind_seq = bk.kind_seq
 		INNER JOIN users u on b.user_seq = u.user_seq
 		WHERE b.user_seq = ${userSeq}
-		<if test="kindSeq != null and kindSeq != 0">
-			AND b.kind_seq = ${kindSeq}
+		<if test="kindSeqList.size > 0">
+			AND b.kind_seq in
+			<foreach collection="kindSeqList" item="kindSeq" index="index" separator="," open="(" close=")">
+			    ${kindSeq}
+			</foreach>
 		</if>
 	</select>
 
