@@ -14,6 +14,9 @@
         <p><%= session.getAttribute("name") %></p>
     </header>
     <section>
+        <input type="checkbox" name="searchKind" id="searchBefore" value="1" checked><label for="searchBefore"> 시작 전</label>
+        <input type="checkbox" name="searchKind" id="searchDoing" value="2" checked><label for="searchDoing"> 하는 중</label>
+        <input type="checkbox" name="searchKind" id="searchEnd" value="3" checked><label for="searchEnd"> 완료</label>
         <table>
             <thead>
                 <tr>
@@ -55,7 +58,11 @@
             <span id="closeBtn">X</span>
             <textarea id="content" placeholder="할 일을 적어주세요"></textarea>
             <div>
-                <div class="before">시작 전</div>
+                <div class="kind">
+                    <input type="radio" name="kind" id="before" value="1" checked><label for="before"> 시작 전</label>
+                    <input type="radio" name="kind" id="doing" value="2" checked><label for="doing"> 하는 중</label>
+                    <input type="radio" name="kind" id="end" value="3" checked><label for="end"> 완료</label>
+                </div>
                 <div>22.10.15</div>
             </div>
         </div>
