@@ -110,8 +110,12 @@ tbody tr td > div > div.end {background: #6eb97d;}
     transform: translate(-50%, -50%);
 }
 
+.popup div.btn_wrap{
+    justify-content:flex-end;
+    gap: 10px;
+}
+
 .popup span {
-    float: right;
     cursor: pointer;
 }
 
@@ -120,6 +124,9 @@ tbody tr td > div > div.end {background: #6eb97d;}
     height: calc(100% - 3rem);
     border: none;
     resize: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: inherit;
 }
 
 .popup div {

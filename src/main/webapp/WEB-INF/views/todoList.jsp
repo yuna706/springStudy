@@ -33,14 +33,17 @@
         </table>
         <div class="background-black"></div>
         <div class="popup">
-            <span id="deleteBtn">삭제</span>
-            <span id="closeBtn">X</span>
+            <div class="btn_wrap">
+                <span id="saveBtn">저장</span>
+                <span id="deleteBtn">삭제</span>
+                <span id="closeBtn">취소</span>
+            </div>
             <textarea id="content" placeholder="할 일을 적어주세요"></textarea>
             <div>
                 <div class="kind">
-                    <input type="radio" name="kind" id="before" value="1" checked><label for="before"> 시작 전</label>
-                    <input type="radio" name="kind" id="doing" value="2" checked><label for="doing"> 하는 중</label>
-                    <input type="radio" name="kind" id="end" value="3" checked><label for="end"> 완료</label>
+                    <input type="radio" name="kind" id="before" value="1"><label for="before"> 시작 전</label>
+                    <input type="radio" name="kind" id="doing" value="2"><label for="doing"> 하는 중</label>
+                    <input type="radio" name="kind" id="end" value="3"><label for="end"> 완료</label>
                 </div>
                 <div>22.10.15</div>
             </div>

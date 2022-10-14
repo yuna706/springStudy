@@ -1,5 +1,9 @@
 $(() => {
     getList(createList);
+
+    $("#closeBtn").on("click", () => {
+        $(".popup, .background-black").hide();
+    })
 });
 
 const createList = (result) => {
@@ -17,6 +21,14 @@ const createList = (result) => {
 
         $(`tbody [data-kind=${item.enNm}]`).append(box);
         $(`tbody [data-kind=${item.enNm}] td:last-child`).data(item);
+    });
+
+    // 해당 노드가 생성된 후 이벤트 리스터를 생성해야 동작함
+    $("tbody tr td").on("click", (e) => {
+        const data = $(e.currentTarget).data();
+        $(".popup textarea").val(data.content);
+        $(`.popup input#${data.enNm}`).attr("checked", true);
+        $(".popup, .background-black").show();
     });
 }
 
