@@ -50,6 +50,15 @@
                 <tr data-kind="end"></tr>
             </tbody>
         </table>
+        <div class="background-black"></div>
+        <div class="popup">
+            <span id="closeBtn">X</span>
+            <textarea id="content" placeholder="할 일을 적어주세요"></textarea>
+            <div>
+                <div class="before">시작 전</div>
+                <div>22.10.15</div>
+            </div>
+        </div>
     </section>
 </div>
 </body>
