@@ -1,0 +1,66 @@
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    border: none;
+}
+.wrap{
+    width: 900px;
+    margin: 1rem auto;
+}
+
+/* header */
+header{
+    display: flex;
+    align-items: flex-end;
+}
+header p{
+    margin-left: 1rem;
+}
+
+/* todoList */
+section{
+    margin-top: 1rem;
+}
+section table,
+section table thead,
+section table tbody{
+    display: block;
+}
+section table thead tr,
+section table tbody {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+}
+section table thead tr th,
+section table tbody tr{
+    flex: 1;
+    margin-top: 2rem;
+}
+
+/* table body */
+tbody tr{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+tbody tr td{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: #ccc solid 1px;
+    border-radius: 10px;
+    gap: 1rem;
+}
+tbody tr td p{
+    font-weight: bold;
+}
+
+tbody tr td > div{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #555;
+}
