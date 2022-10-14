@@ -33,7 +33,7 @@ public class TodoListController {
     }
 
     @GetMapping("/{boardSeq}")
-    public @ResponseBody TodoListDto getTodoList(@RequestBody TodoListDto todoListDto, @PathVariable int boardSeq) throws Exception {
+    public @ResponseBody TodoListDto getTodoList(TodoListDto todoListDto, @PathVariable int boardSeq) throws Exception {
         todoListDto.setBoardSeq(boardSeq);
         return todoListService.select(todoListDto);
     }
