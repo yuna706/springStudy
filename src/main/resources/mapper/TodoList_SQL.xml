@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="TodoListDao">
+	<resultMap type="kr.co.km.dto.TodoListDto" id="todoListDto">
+		<result property="boardSeq" column="board_seq" />
+		<result property="content" column="content" />
+		<result property="insertDt" column="insert_dt" />
+
+		<result property="kindSeq" column="kind_seq" />
+		<result property="krNm" column="kr_nm" />
+		<result property="enNm" column="en_nm" />
+
+		<result property="userSeq" column="user_seq" />
+		<result property="name" column="name" />
+	</resultMap>
+
+	<select id="selectList" parameterType="hashmap" resultType="hashmap" resultMap="todoListDto">
+		-- select list
+		SELECT b.*, bk.kr_nm, bk.en_nm, u.name
+		FROM board b
+		INNER JOIN board_kind bk on b.kind_seq = bk.kind_seq
+		INNER JOIN users u on b.user_seq = u.user_seq
+		WHERE b.user_seq = ${userSeq}
+		<if test="kindSeq != null and kindSeq != 0">
+			AND b.kind_seq = ${kindSeq}
+		</if>
+	</select>
+
+	<select id="select" parameterType="hashmap" resultType="hashmap" resultMap="todoListDto">
+		-- select one
+		SELECT b.*, bk.kr_nm, bk.en_nm, u.name
+		FROM board b
+		INNER JOIN board_kind bk on b.kind_seq = bk.kind_seq
+		INNER JOIN users u on b.user_seq = u.user_seq
+		WHERE b.board_seq = ${boardSeq}
+	</select>
+
+	<insert id="insert" parameterType="hashmap">
+		-- insert
+		INSERT board (content, kind_seq, user_seq, insert_dt)
+		VALUES ('${content}', ${kindSeq}, ${userSeq}, now());
+	</insert>
+
+	<update id="update" parameterType="hashmap">
+		-- update
+		UPDATE board
+		SET content = '${content}', kind_seq = ${kindSeq}
+		WHERE board_seq = ${boardSeq};
+	</update>
+	
+</mapper>
